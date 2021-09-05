@@ -8,24 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import com.xyz.app.R
 
-class MainFragment : Fragment() {
+class CurrencyListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = CurrencyListFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: CurrencyListViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.currency_list_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(CurrencyListViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
