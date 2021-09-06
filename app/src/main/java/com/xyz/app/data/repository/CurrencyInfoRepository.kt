@@ -28,7 +28,7 @@ class CurrencyInfoRepository(
     }
     
     suspend fun update(currencyInfos: List<CurrencyInfo>) {
-        TODO("Not yet implemented")
+        currencyInfoLocalDataSource.update(currencyInfos)
     }
 
     suspend fun delete(currencyInfo: CurrencyInfo) {
