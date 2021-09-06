@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">XyzApplication</string>
+
+    <string name="currency_list.hint.crypto_currency">CRYPTOCURRENCY</string>
 </resources>
