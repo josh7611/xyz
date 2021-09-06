@@ -20,7 +20,7 @@ class CurrencyListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.currency_list_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_currency_list, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
