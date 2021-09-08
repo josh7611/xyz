@@ -4,5 +4,9 @@
     <string name="global.error.unknown">Unknown error occurred!! Please try again.</string>
 
     <string name="currency_list.hint.crypto_currency">CRYPTOCURRENCY</string>
+
+    <string name="main.button.fetch_currency_list">fetch currency</string>
+    <string name="main.button.sort_currency_list">sort currency</string>
+
     <string name="main.error.sort_before_fetch">Please sort currency info after they are fetched.</string>
 </resources>
