@@ -10,7 +10,7 @@ import com.xyz.app.domain.CurrencyInfo
 import com.xyz.app.ui.common.firstLetterAsUpperCase
 
 
-class CurrencyListAdapter() :
+class CurrencyListAdapter(private val viewmodel: CurrencyListViewModel) :
     ListAdapter<CurrencyInfo, CurrencyListAdapter.CurrencyListViewHolder>(DiffCallback()) {
 
     private class DiffCallback : DiffUtil.ItemCallback<CurrencyInfo>() {
@@ -47,6 +47,10 @@ class CurrencyListAdapter() :
             binding.iconTextView.text = currencyInfo.name.firstLetterAsUpperCase()
             binding.currencyNameTextView.text = currencyInfo.name
             binding.symbolTextView.text = currencyInfo.symbol
+
+            binding.root.setOnClickListener {
+                viewmodel.selectCurrencyInfo(currencyInfo)
+            }
         }
     }
 }
