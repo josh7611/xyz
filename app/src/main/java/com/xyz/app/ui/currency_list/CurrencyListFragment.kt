@@ -1,4 +1,4 @@
-package com.xyz.app.ui.main
+package com.xyz.app.ui.currency_list
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.xyz.app.R
 import com.xyz.app.databinding.FragmentCurrencyListBinding
 import com.xyz.app.domain.CurrencyInfo
 

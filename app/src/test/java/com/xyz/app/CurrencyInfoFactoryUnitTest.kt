@@ -1,8 +1,5 @@
 package com.xyz.app
 
-import com.xyz.app.domain.CurrencyInfo
-import com.xyz.app.ui.main.CurrencyInfoFactory
-import org.junit.Assert.assertEquals
 import org.junit.Test
 
 

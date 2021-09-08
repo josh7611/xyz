@@ -6,8 +6,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.xyz.app.data.vo.Status
 import com.xyz.app.databinding.ActivityMainBinding
-import com.xyz.app.ui.main.CurrencyListFragment
-import com.xyz.app.ui.main.CurrencyListViewModel
+import com.xyz.app.ui.currency_list.CurrencyListFragment
+import com.xyz.app.ui.currency_list.CurrencyListViewModel
 
 class MainActivity : AppCompatActivity() {
     private val viewModel: CurrencyListViewModel by viewModels()
