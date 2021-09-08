@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">XyzApplication</string>
 
+    <string name="global.error.unknown">Unknown error occurred!! Please try again.</string>
+
     <string name="currency_list.hint.crypto_currency">CRYPTOCURRENCY</string>
+    <string name="main.error.sort_before_fetch">Please sort currency info after they are fetched.</string>
 </resources>

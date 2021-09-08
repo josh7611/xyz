@@ -16,6 +16,7 @@
 
 package com.xyz.app.data.vo
 
+import com.xyz.app.data.ApplicationException.ApplicationException
 import com.xyz.app.data.vo.Status.ERROR
 import com.xyz.app.data.vo.Status.LOADING
 import com.xyz.app.data.vo.Status.SUCCESS
@@ -24,14 +25,14 @@ import com.xyz.app.data.vo.Status.SUCCESS
  * A generic class that holds a value with its loading status.
  * @param <T>
 </T> */
-data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
+data class Resource<out T>(val status: Status, val data: T?, val message: String?, val exception: ApplicationException? = null) {
     companion object {
         fun <T> success(data: T?): Resource<T> {
             return Resource(SUCCESS, data, null)
         }
 
-        fun <T> error(msg: String, data: T?): Resource<T> {
-            return Resource(ERROR, data, msg)
+        fun <T> error(msg: String, data: T?, exception: ApplicationException?): Resource<T> {
+            return Resource(ERROR, data, msg, exception)
         }
 
         fun <T> loading(data: T?): Resource<T> {
