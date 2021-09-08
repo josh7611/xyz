@@ -13,7 +13,7 @@ import com.xyz.app.domain.CurrencyInfo
 class CurrencyListFragment : Fragment() {
     private val viewModel: CurrencyListViewModel by activityViewModels()
     private lateinit var binding: FragmentCurrencyListBinding
-    private val currencyListAdapter = CurrencyListAdapter()
+    private lateinit var currencyListAdapter: CurrencyListAdapter
 
     companion object {
         fun newInstance() = CurrencyListFragment()
@@ -49,6 +49,8 @@ class CurrencyListFragment : Fragment() {
         binding.currencyListRecyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.currencyListRecyclerView.setHasFixedSize(true)
+
+        currencyListAdapter = CurrencyListAdapter(viewModel)
         binding.currencyListRecyclerView.adapter = currencyListAdapter
     }
 

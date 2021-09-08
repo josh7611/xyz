@@ -22,6 +22,8 @@ class CurrencyListViewModel : ViewModel() {
     val currencyInfos: LiveData<Resource<List<CurrencyInfo>>>
         get() = _currencyInfos
 
+    val selectedCurrencyInfo: LiveData<CurrencyInfo> get() = _selectedCurrencyInfo
+
     private val _currencyInfos = MutableLiveData<Resource<List<CurrencyInfo>>>()
     fun fetchCurrencyInfo() {
         _currencyInfos.value = Resource.loading(null)
@@ -33,6 +35,11 @@ class CurrencyListViewModel : ViewModel() {
                 _currencyInfos.value = Resource.success(it)
             }
         }
+    }
+
+    private val _selectedCurrencyInfo = MutableLiveData<CurrencyInfo>()
+    fun selectCurrencyInfo(currencyInfo: CurrencyInfo) {
+        _selectedCurrencyInfo.value = currencyInfo
     }
 
     private suspend fun shouldLoadTestData() = withContext(Dispatchers.IO) {

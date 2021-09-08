@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         initUi()
         observeCurrencyInfo()
+        observeSelectedCurrencyInfo()
     }
 
     private fun initUi() {
@@ -37,7 +38,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
+    private fun observeSelectedCurrencyInfo() {
+        viewModel.selectedCurrencyInfo.observe(this) { currencyInfo ->
+            toast?.cancel()
+            toast = Toast.makeText(
+                this,
+            "${currencyInfo.name} selected!!",
+                Toast.LENGTH_LONG
+            ).also { it.show() }
+        }
+    }
 
     private fun observeCurrencyInfo() {
         viewModel.currencyInfos.observe(this) { resource ->
