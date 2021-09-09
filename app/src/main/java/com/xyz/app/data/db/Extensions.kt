@@ -1,5 +1,6 @@
 package com.xyz.app.data.db
 
+import android.view.View
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
@@ -22,4 +23,8 @@ suspend inline fun <T> executeDaoCall(
             throw e
         }
     }
+}
+
+fun View.visible(visible: Boolean) {
+    visibility = if (visible) View.VISIBLE else View.INVISIBLE
 }
