@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUi() {
         binding.fetchCurrencyListButton.setOnClickListener {
+            binding.welcomeTextView.visibility = GONE
             viewModel.fetchCurrencyInfo()
         }
 
