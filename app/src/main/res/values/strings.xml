@@ -5,6 +5,7 @@
 
     <string name="currency_list.hint.crypto_currency">CRYPTOCURRENCY</string>
 
+    <string name="main.description.welcome">Welcome!! Click Fetch Currency Button to load currency information!!</string>
     <string name="main.button.fetch_currency_list">fetch currency</string>
     <string name="main.button.sort_currency_list">sort currency</string>
 
