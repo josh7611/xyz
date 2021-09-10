@@ -2,12 +2,14 @@ package com.xyz.app
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View.GONE
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.xyz.app.data.db.visible
 import com.xyz.app.data.vo.Status
 import com.xyz.app.databinding.ActivityMainBinding
+import com.xyz.app.domain.CurrencyInfo
 import com.xyz.app.ui.currency_list.CurrencyListFragment
 import com.xyz.app.ui.currency_list.CurrencyListViewModel
 
@@ -35,12 +37,20 @@ class MainActivity : AppCompatActivity() {
     private fun initUi() {
         binding.fetchCurrencyListButton.setOnClickListener {
             binding.welcomeTextView.visibility = GONE
+            updateCurrencyList(emptyList())
             viewModel.fetchCurrencyInfo()
         }
 
         binding.sortCurrencyListButton.setOnClickListener {
+            updateCurrencyList(emptyList())
             viewModel.sortCurrencyInfo()
         }
+    }
+
+    private fun updateCurrencyList(list: List<CurrencyInfo>) {
+        (supportFragmentManager.findFragmentById(R.id.container) as? CurrencyListFragment)?.updateCurrencyList(
+            list
+        )
     }
 
     private fun observeSelectedCurrencyInfo() {
@@ -62,9 +72,7 @@ class MainActivity : AppCompatActivity() {
 
             when (resource.status) {
                 Status.SUCCESS -> {
-                    (supportFragmentManager.findFragmentById(R.id.container) as? CurrencyListFragment)?.updateCurrencyList(
-                        resource.data ?: emptyList()
-                    )
+                    updateCurrencyList(resource.data ?: emptyList())
                 }
                 Status.ERROR -> {
                     toast?.cancel()
