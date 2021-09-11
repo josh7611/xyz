@@ -1,10 +1,12 @@
 package com.xyz.app.ui.currency_list
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.xyz.app.data.ApplicationException.SortBeforeFetchException
+import com.xyz.app.data.db.CurrencyInfoFactory
 import com.xyz.app.data.repository.CurrencyInfoRepository
 import com.xyz.app.data.vo.Resource
 import com.xyz.app.domain.CurrencyInfo
@@ -52,6 +54,11 @@ class CurrencyListViewModel : ViewModel() {
                 data = null,
                 exception = SortBeforeFetchException
             )
+            return
+        }
+
+        if (job?.isCompleted == false) {
+            Log.d(TAG, "Do nothing cause it is sorting")
             return
         }
 
