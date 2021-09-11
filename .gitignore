@@ -19,3 +19,4 @@ ktlint
 keystore.properties
 environment.properties
 selfsigned.crt
+*.jks
