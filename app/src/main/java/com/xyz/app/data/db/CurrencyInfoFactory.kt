@@ -3,10 +3,15 @@ package com.xyz.app.data.db
 import com.google.gson.Gson
 import com.xyz.app.domain.CurrencyInfo
 
+data class CurrencyInfoDao(
+    val id: String,
+    val name: String,
+    val symbol: String
+)
 
 object CurrencyInfoFactory {
     fun list(): List<CurrencyInfo> {
-        return Gson().fromJson(testSuit, Array<CurrencyInfo>::class.java).asList()
+        return Gson().fromJson(testSuit, Array<CurrencyInfoDao>::class.java).asList().map { CurrencyInfo(it.id, it.name, it.symbol) }
     }
 }
 
