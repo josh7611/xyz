@@ -1,4 +1,4 @@
-package com.xyz.app.ui.currency_list
+package com.xyz.app.data.db
 
 import com.google.gson.Gson
 import com.xyz.app.domain.CurrencyInfo
