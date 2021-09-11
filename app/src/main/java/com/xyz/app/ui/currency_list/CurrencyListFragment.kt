@@ -45,6 +45,8 @@ class CurrencyListFragment : Fragment() {
         observeCurrencyInfo()
     }
 
+    // TODO : Extract the logic of showing animation could be controlled by upper layer
+    //  or encapsulate the logic of loading currency info list into this fragment (more suggested one)
     private fun observeCurrencyInfo() {
         viewModel.currencyInfos.observe(viewLifecycleOwner) { resource ->
             when (resource.status) {
